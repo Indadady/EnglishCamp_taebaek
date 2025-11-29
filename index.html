@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 태백 글로벌 썸머 스쿨 제안서 - 투어메이커</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Hero Background */
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .modal-bg {
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(4px);
+        }
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        /* Animation Utilities */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #f1f1f1; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #10b981; border-radius: 3px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #059669; }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-200 selection:text-emerald-900">
+
+    <!-- Header -->
+    <header class="fixed w-full z-50 transition-all duration-300 bg-transparent" id="navbar">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-2 group">
+                <img id="logo-img" src="https://blogger.googleusercontent.com/img/a/AVvXsEjPt_XUtR36-do31LZPu-HseUFx7O8EWPS3mqIfk_I03B3ltV1gnHyB8IWDw7wmx5NRUKphcI0oobuDBpPqxrFbHUiaE68DaCS7t4_c8mrCAAhqMtGt2wMem2aWCTFY2JO9vIWqqdpHYnD-gNE6Lj64aRyTuT9jHZvmylPMNU0JpZ6sGcFmuq8m5717HII" alt="Tourmaker Logo" class="h-8 md:h-9 object-contain transition-transform group-hover:scale-105">
+            </a>
+            <nav id="nav-links" class="hidden md:flex space-x-8 font-medium text-white/90">
+                <!-- Reordered Navigation Links -->
+                <a href="#overview" class="hover:text-emerald-400 transition-colors relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-emerald-400 after:left-0 after:-bottom-1 after:transition-all hover:after:w-full">제안 배경</a>
+                <a href="#program" class="hover:text-emerald-400 transition-colors relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-emerald-400 after:left-0 after:-bottom-1 after:transition-all hover:after:w-full">프로그램</a>
+                <a href="#location" class="hover:text-emerald-400 transition-colors relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-emerald-400 after:left-0 after:-bottom-1 after:transition-all hover:after:w-full">인프라 활용</a>
+                <a href="#budget" class="hover:text-emerald-400 transition-colors relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-emerald-400 after:left-0 after:-bottom-1 after:transition-all hover:after:w-full">예산 전략</a>
+                <a href="#economy" class="hover:text-emerald-400 transition-colors relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-emerald-400 after:left-0 after:-bottom-1 after:transition-all hover:after:w-full">경제 효과</a>
+            </nav>
+            <button onclick="document.getElementById('contact').scrollIntoView()" class="bg-emerald-600 text-white px-6 py-2 rounded-full font-bold hover:bg-emerald-700 transition-all transform hover:scale-105 shadow-lg text-sm flex items-center gap-2">
+                협력 제안 <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg h-screen flex items-center justify-center text-center text-white px-4 relative">
+        <div class="absolute bottom-0 w-full h-32 bg-gradient-to-t from-slate-50 to-transparent"></div>
+        <div class="max-w-6xl mx-auto z-10 animate-fade-in-up">
+            <span class="inline-block py-1 px-4 rounded-full bg-emerald-600/80 backdrop-blur-sm border border-emerald-400/30 text-sm md:text-base mb-6 tracking-[0.2em] uppercase font-semibold hover:bg-emerald-600 transition cursor-default shadow-lg">
+                2026 Taebaek Global Summer School
+            </span>
+            <h1 class="text-4xl md:text-7xl font-serif font-bold mb-6 leading-tight text-shadow">
+                No Quebec in Canada,<br>
+                <span class="text-emerald-400">Yes Taebaek</span> in Korea!
+            </h1>
+            <p class="text-lg md:text-2xl mb-10 font-light text-slate-100 max-w-3xl mx-auto leading-relaxed text-shadow bg-black/20 p-4 rounded-xl backdrop-blur-sm">
+                태백의 여름은 시원하지만, <strong class="text-emerald-300">태백의 경제는 뜨거워야 합니다.</strong><br>
+                일회성 축제를 넘어, 사람이 머무르는 <strong class="text-white">체류형 교육 관광</strong>을 제안합니다.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#program" class="bg-white text-emerald-900 px-8 py-4 rounded-lg font-bold hover:bg-emerald-50 transition-all shadow-xl flex items-center justify-center gap-2 group">
+                    핵심 프로그램 보기 <i data-lucide="arrow-down" class="w-5 h-5 group-hover:translate-y-1 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section (Why Now?) -->
+    <section id="overview" class="py-20 bg-slate-50 -mt-20 relative z-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-emerald-600 font-bold tracking-wider text-sm uppercase">Why Taebaek?</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mt-2">지금, 왜 태백인가?</h2>
+                <div class="w-20 h-1 bg-emerald-500 mx-auto rounded-full my-4"></div>
+                <p class="text-slate-600 text-lg">기후 변화와 지방 소멸 위기, 태백이 가진 '기후 자원'이 가장 확실한 대안입니다.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1: Climate -->
+                <div class="bg-white rounded-3xl shadow-lg border border-slate-100 p-8 hover:shadow-2xl transition duration-300 group transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
+                        <i data-lucide="thermometer-snowflake" class="w-8 h-8 text-blue-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">기후 위기의 대안<br><span class="text-blue-600">Cool City 태백</span></h3>
+                    <p class="text-slate-500 leading-relaxed">
+                        폭염으로 인한 학습 효율 저하.<br>
+                        평균 해발 900m, 캐나다 퀘벡과 가장 유사한 태백의 여름 기후는 **최적의 학습 환경(Study Efficiency)**을 제공합니다.
+                    </p>
+                </div>
+
+                <!-- Card 2: Economy -->
+                <div class="bg-white rounded-3xl shadow-lg border border-slate-100 p-8 hover:shadow-2xl transition duration-300 group transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-emerald-600 transition-colors">
+                        <i data-lucide="coins" class="w-8 h-8 text-emerald-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">고환율 시대<br><span class="text-emerald-600">경제적 교육 모델</span></h3>
+                    <p class="text-slate-500 leading-relaxed">
+                        해외 연수 비용 1,000만원 시대.<br>
+                        태백에서는 **해외 비용의 50% 수준**으로, 검증된 원어민 디렉터와 함께 글로벌 커리큘럼을 경험할 수 있습니다.
+                    </p>
+                </div>
+
+                <!-- Card 3: Population -->
+                <div class="bg-white rounded-3xl shadow-lg border border-slate-100 p-8 hover:shadow-2xl transition duration-300 group transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-500 transition-colors">
+                        <i data-lucide="users" class="w-8 h-8 text-amber-500 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">지방 소멸 대응<br><span class="text-amber-500">체류형 생활인구</span></h3>
+                    <p class="text-slate-500 leading-relaxed">
+                        스쳐가는 관광에서 **머무르는 생활**로.<br>
+                        학생과 학부모가 2주 이상 체류하며 지역 상권(숙박, 식음료)에 직접적인 경제 효과를 창출합니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section id="comparison" class="py-20 bg-slate-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-emerald-600 font-bold tracking-wider text-sm uppercase">Concept Motif</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mt-2">닮은꼴 도시: 퀘벡 & 태백</h2>
+                <p class="text-slate-600 text-lg mt-2">글로벌 썸머 스쿨의 영감이 된 두 도시의 평행이론</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                <!-- Quebec Side -->
+                <div class="space-y-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Flag_of_Canada.svg/320px-Flag_of_Canada.svg.png" alt="Canada Flag" class="w-8 h-auto shadow-sm rounded-sm">
+                        <h3 class="text-2xl font-bold text-slate-900">캐나다 퀘벡 시티</h3>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        <strong class="text-emerald-700">"북미 속의 작은 프랑스"</strong><br>
+                        북미 유일의 성곽 도시이자 유네스코 세계문화유산. 여름철 썸머 페스티벌과 유럽풍 거리 문화가 발달한 낭만의 도시입니다.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="rounded-xl overflow-hidden h-40 shadow-md">
+                            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/56/82/91/old-quebec.jpg?h=500&s=1&w=500" class="w-full h-full object-cover">
+                        </div>
+                        <div class="rounded-xl overflow-hidden h-40 shadow-md">
+                            <img src="https://m.ahstatic.com/is/image/accorhotels/aja_p_7085-99%3A4by3?dpr=on%2C1.5&fmt=jpg&hei=251&icc=sRGB&iccEmbed=true&op_usm=1.75%2C0.3%2C2%2C0&qlt=80&resMode=sharp2&wid=335" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="video-container group cursor-pointer" onclick="this.innerHTML='<iframe src=\'https://www.youtube.com/embed/G6adw5NakH0?autoplay=1\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\' allowfullscreen></iframe>'">
+                        <img src="https://img.youtube.com/vi/G6adw5NakH0/maxresdefault.jpg" alt="Quebec Video Thumbnail" class="w-full h-full object-cover transition duration-300 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/30 transition">
+                            <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center shadow-xl"><i data-lucide="play" class="w-8 h-8 text-white fill-current ml-1"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Taebaek Side -->
+                <div class="space-y-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/320px-Flag_of_South_Korea.svg.png" alt="Korea Flag" class="w-8 h-auto shadow-sm rounded-sm">
+                        <h3 class="text-2xl font-bold text-slate-900">대한민국 태백시</h3>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        <strong class="text-blue-700">"평균 해발 900m의 고원 도시"</strong><br>
+                        한여름에도 시원한 기후와 이국적인 풍광을 자랑합니다. 매봉산 배추밭과 풍력발전단지는 한국의 알프스라 불립니다.
+                    </p>
+                    <div class="rounded-xl overflow-hidden h-80 shadow-md md:h-[calc(20rem+1rem+56.25%)]">
+                        <img src="https://www.news1.kr/_next/image?q=75&url=https%3A%2F%2Fi3n.news1.kr%2Fsystem%2Fphotos%2F2025%2F7%2F10%2F7387677%2Fhigh.jpg&w=1920" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                        <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent text-white">
+                            <p class="font-bold">시원한 바람의 언덕, 매봉산</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1. Program Section (Reordered to Top) -->
+    <section id="program" class="py-20 bg-emerald-900 text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl -ml-48 -mb-48"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-12">
+                <span class="text-emerald-400 font-bold tracking-wider text-sm uppercase">1. Core Program</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2">축제와 하나 되는 프로그램</h2>
+                <p class="text-emerald-200 mt-3">교실 안의 배움이 축제 현장의 경험으로 이어집니다.</p>
+            </div>
+
+            <!-- Tabs -->
+            <div class="flex flex-wrap justify-center mb-10 gap-2">
+                <button onclick="switchTab('prog-edu')" id="btn-edu" class="px-6 py-2 rounded-full font-bold text-sm transition-all bg-emerald-500 text-white shadow-lg transform scale-105">평일 (Education)</button>
+                <button onclick="switchTab('prog-fes')" id="btn-fes" class="px-6 py-2 rounded-full font-bold text-sm transition-all bg-white/10 text-emerald-100 hover:bg-white/20">주말 (Festival)</button>
+                <button onclick="switchTab('prog-fam')" id="btn-fam" class="px-6 py-2 rounded-full font-bold text-sm transition-all bg-white/10 text-emerald-100 hover:bg-white/20">상시 (Family)</button>
+            </div>
+
+            <!-- Content Area -->
+            <div class="bg-white/10 backdrop-blur-md rounded-3xl p-6 md:p-10 border border-white/20 min-h-[300px]">
+                
+                <!-- Weekday (Education) -->
+                <div id="prog-edu" class="grid grid-cols-1 md:grid-cols-2 gap-8 animate-fade-in-up">
+                    <div class="flex flex-col justify-center">
+                        <h3 class="text-2xl font-bold text-emerald-300 mb-4">📚 Taebaek-Quebec Class</h3>
+                        <p class="text-emerald-100 mb-4 text-sm">태백시 도서관, 평생학습관 등 공공시설을 100% 활용합니다.</p>
+                        <ul class="space-y-4 text-lg">
+                            <li class="flex items-start gap-3">
+                                <div class="bg-emerald-500/20 p-2 rounded-lg"><i data-lucide="book-open" class="w-6 h-6 text-emerald-300"></i></div>
+                                <div>
+                                    <strong class="block text-white">Andy와 함께하는 문화 수업</strong>
+                                    <span class="text-emerald-200 text-sm">캐나다 역사/문화/영어를 통합적으로 학습</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="bg-emerald-500/20 p-2 rounded-lg"><i data-lucide="mic" class="w-6 h-6 text-emerald-300"></i></div>
+                                <div>
+                                    <strong class="block text-white">토론 & 발표 (PBL)</strong>
+                                    <span class="text-emerald-200 text-sm">한국 학생들이 영어로 자신의 생각을 논리적으로 표현</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden h-64">
+                        <img src="https://blogger.googleusercontent.com/img/a/AVvXsEinvtNAU48RF_EPUXj6ie2tT_f8F0JnQvjCiP_FewebmCQXMREiaZ-Hla-WMM5p1cEYw8ZFtzAioYOApSSJveevnNG-BrlrHeMk6cwe4GP2uRu9ukL21A6EoD9PGV6W2CQe7FqseLkI2N7PA_92eDeuqwVW3uQJFAnOuHwcje3TT1PgXL9wggitcZ2IOeM" alt="Korean Students" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Weekend (Festival) -->
+                <div id="prog-fes" class="hidden grid-cols-1 md:grid-cols-2 gap-8 animate-fade-in-up">
+                    <div class="flex flex-col justify-center">
+                        <h3 class="text-2xl font-bold text-blue-300 mb-4">🎉 Global Festival Leader</h3>
+                        <p class="text-blue-100 mb-4 text-sm">배운 영어를 축제 현장에서 직접 사용하며 자신감을 키웁니다.</p>
+                        <ul class="space-y-4 text-lg">
+                            <li class="flex items-start gap-3">
+                                <div class="bg-blue-500/20 p-2 rounded-lg"><i data-lucide="users" class="w-6 h-6 text-blue-300"></i></div>
+                                <div>
+                                    <strong class="block text-white">[축제 연계] 주니어 통역/안내 봉사</strong>
+                                    <span class="text-blue-200 text-sm">썸머 스쿨 학생들이 외국인 방문객 안내 및 통역 지원</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="bg-blue-500/20 p-2 rounded-lg"><i data-lucide="music" class="w-6 h-6 text-blue-300"></i></div>
+                                <div>
+                                    <strong class="block text-white">[무대 연계] 영어 뮤지컬 공연</strong>
+                                    <span class="text-blue-200 text-sm">축제 메인 무대에서 펼쳐지는 학생들의 성과 발표회</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden h-64">
+                        <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjJPtGtBklXMUXKCDEFy1OdoJJ54YxOhx_-JbZCpMrybwNyglVO4gnqQ5Um6-MHWCdBu_v6VHaAQbxJavPn66AM4BH60BzXOYRjjso9lpb_Ghfqdc_iGRXX8A4lwuwrkAJDrwjDWVE6ukvtug9ep471kbwLgecB5OpxYAw0zWcrppP_LLiyoS_9m0FGHJ0" alt="Activity" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Family (Workation) -->
+                <div id="prog-fam" class="hidden grid-cols-1 md:grid-cols-2 gap-8 animate-fade-in-up">
+                    <div class="flex flex-col justify-center">
+                        <h3 class="text-2xl font-bold text-amber-300 mb-4">💻 Mom & Dad Workation</h3>
+                        <p class="text-amber-100 mb-4 text-sm">아이가 공부하는 동안, 부모님은 태백의 자연 속에서 일과 휴식을 즐깁니다.</p>
+                        <ul class="space-y-4 text-lg">
+                            <li class="flex items-start gap-3">
+                                <div class="bg-amber-500/20 p-2 rounded-lg"><i data-lucide="wifi" class="w-6 h-6 text-amber-300"></i></div>
+                                <div>
+                                    <strong class="block text-white">숲속 공유 오피스</strong>
+                                    <span class="text-amber-200 text-sm">'바람의 언덕' 등 시원한 숲 카페와 연계한 업무 공간 제공</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="bg-amber-500/20 p-2 rounded-lg"><i data-lucide="map" class="w-6 h-6 text-amber-300"></i></div>
+                                <div>
+                                    <strong class="block text-white">태백 맛집 지도 제공</strong>
+                                    <span class="text-amber-200 text-sm">투어메이커가 큐레이션한 로컬 맛집 투어 유도</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Workation" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Location Advantage Section (Moved Here) -->
+    <section id="location" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="mb-12">
+                <span class="text-blue-600 font-bold tracking-wider text-sm uppercase">2. Location Advantage</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mt-2">태백만의 인프라, 200% 활용법</h2>
+                <p class="text-slate-500 mt-2">유휴 공공시설 활용으로 비용은 낮추고, 고지대 환경으로 특별함은 더합니다.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-100 group hover:shadow-lg transition">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Accommodation" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute bottom-2 left-2 bg-blue-600 text-white text-xs px-2 py-1 rounded">숙박비 절감</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg text-slate-900 mb-2">공공 합숙 시설 활용</h3>
+                        <p class="text-sm text-slate-600 mb-4">여름철 비수기인 <strong>태백산 민박촌</strong> 및 <strong>365세이프타운 숙소</strong>를 캠프 기숙사로 활용.</p>
+                        <ul class="text-xs text-slate-500 space-y-1">
+                            <li>• 비용 효율화 및 시 운영 수익 증대</li>
+                            <li>• 단체 생활을 통한 공동체 의식 함양</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-100 group hover:shadow-lg transition">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Safety Education" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute bottom-2 left-2 bg-amber-500 text-white text-xs px-2 py-1 rounded">안전 + 영어</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg text-slate-900 mb-2">365세이프타운 연계</h3>
+                        <p class="text-sm text-slate-600 mb-4">안전 체험 시설을 영어 미션 장소로 활용하는 <strong>"English Safety Hero"</strong> 프로그램 운영.</p>
+                        <ul class="text-xs text-slate-500 space-y-1">
+                            <li>• 국내 유일 안전 테마 영어 교육</li>
+                            <li>• 시설 가동률 증대 효과</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-100 group hover:shadow-lg transition">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1565992441121-4367c2967103?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sports" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute bottom-2 left-2 bg-emerald-600 text-white text-xs px-2 py-1 rounded">Cool Sports</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg text-slate-900 mb-2">고지대 스포츠 결합</h3>
+                        <p class="text-sm text-slate-600 mb-4">한여름 대낮에도 시원한 트랙에서 즐기는 <strong>"English Sports Day"</strong>.</p>
+                        <ul class="text-xs text-slate-500 space-y-1">
+                            <li>• 태백선수촌 및 고지대 트랙 활용</li>
+                            <li>• 땀 흘리며 배우는 살아있는 영어</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Budget Strategy Section (Moved Here) -->
+    <section id="budget" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-emerald-600 font-bold tracking-wider text-sm uppercase">3. Budget Strategy</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mt-2">축제 예산 10%의 '전환'과 '융합'</h2>
+                <div class="w-20 h-1 bg-emerald-500 mx-auto rounded-full my-4"></div>
+                <p class="text-slate-600 text-lg">단순 행사비가 아닌, 외부 인구를 2주간 살게 만드는 <strong class="text-emerald-700">정주형 프로그램 예산</strong>으로 활용하십시오.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <!-- Problem -->
+                <div class="bg-white p-8 rounded-3xl shadow-lg border border-red-100 relative group hover:shadow-xl transition">
+                    <div class="absolute -top-5 left-8 bg-red-500 text-white px-4 py-1 rounded-full text-sm font-bold shadow-md">AS-IS (현재)</div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2">
+                        <i data-lucide="alert-circle" class="w-6 h-6 text-red-500"></i> 기존 축제 예산의 한계
+                    </h3>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-start gap-2">
+                            <span class="bg-red-100 text-red-600 rounded p-1"><i data-lucide="x" class="w-3 h-3"></i></span>
+                            <span><strong>일회성 지출:</strong> 공연비, 무대 설치비 등 휘발성 비용 집중</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="bg-red-100 text-red-600 rounded p-1"><i data-lucide="clock" class="w-3 h-3"></i></span>
+                            <span><strong>짧은 체류:</strong> 공연 관람(2시간) → 식사 1끼 → 귀가</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="bg-red-100 text-red-600 rounded p-1"><i data-lucide="trending-down" class="w-3 h-3"></i></span>
+                            <span><strong>낮은 낙수효과:</strong> 지역 내 숙박 및 다끼 식사 연결 고리 약함</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Solution -->
+                <div class="bg-white p-8 rounded-3xl shadow-lg border border-emerald-100 relative group hover:shadow-xl transition transform md:-translate-x-4 md:scale-105 z-10">
+                    <div class="absolute -top-5 left-8 bg-emerald-600 text-white px-4 py-1 rounded-full text-sm font-bold shadow-md">TO-BE (제안)</div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2">
+                        <i data-lucide="check-circle-2" class="w-6 h-6 text-emerald-600"></i> 교육 관광으로의 예산 전환
+                    </h3>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-start gap-2">
+                            <span class="bg-emerald-100 text-emerald-600 rounded p-1"><i data-lucide="check" class="w-3 h-3"></i></span>
+                            <span><strong>체류형 예산:</strong> 2주 이상 거주하는 생활인구 유치 비용</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="bg-emerald-100 text-emerald-600 rounded p-1"><i data-lucide="zap" class="w-3 h-3"></i></span>
+                            <span><strong>축제 시너지:</strong> 학생 성과 발표회를 축제 메인 콘텐츠로 활용</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="bg-emerald-100 text-emerald-600 rounded p-1"><i data-lucide="coins" class="w-3 h-3"></i></span>
+                            <span><strong>글로벌 존 운영:</strong> 원어민 강사들이 축제장 영어 체험 부스 운영</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Economic Analysis Section (Moved Here) -->
+    <section id="economy" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-emerald-600 font-bold tracking-wider text-sm uppercase">4. Economic Impact Detail</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mt-2">경제성 분석: 3천만원의 가치 비교</h2>
+                <div class="w-20 h-1 bg-emerald-500 mx-auto rounded-full my-4"></div>
+                <p class="text-slate-600 text-lg">같은 예산, 전혀 다른 결과. 축제 예산을 소상공인에게 직접 뿌려주는 가장 확실한 방법입니다.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Option A: Singer -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 opacity-80 hover:opacity-100 transition">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-xl font-bold text-slate-600">A. 유명 가수 1팀 섭외</h3>
+                        <span class="bg-slate-200 text-slate-600 px-3 py-1 rounded-full text-sm font-bold">기존 방식</span>
+                    </div>
+                    <div class="text-4xl font-bold text-slate-400 mb-2">3,000만원</div>
+                    <p class="text-slate-500 text-sm mb-6">투입 예산 (섭외비 기준)</p>
+                    
+                    <ul class="space-y-4 text-slate-600 border-t border-slate-200 pt-6">
+                        <li class="flex justify-between">
+                            <span>체류 시간</span>
+                            <span class="font-bold">평균 3시간</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>주요 소비</span>
+                            <span class="font-bold">편의점, 간식 (소액)</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>지역 낙수효과</span>
+                            <span class="font-bold text-red-500">미비함 (휘발성)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Option B: Summer School -->
+                <div class="bg-white p-8 rounded-3xl border-2 border-emerald-500 shadow-xl transform md:scale-105 z-10">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-xl font-bold text-emerald-800">B. 썸머 스쿨 운영</h3>
+                        <span class="bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-bold">제안 방식</span>
+                    </div>
+                    <div class="text-4xl font-bold text-emerald-600 mb-2">3,000만원</div>
+                    <p class="text-slate-500 text-sm mb-6">투입 예산 (운영비 기준)</p>
+                    
+                    <div class="space-y-4 border-t border-slate-100 pt-6">
+                        <div class="flex justify-between items-center">
+                            <span class="text-slate-600">유치 인원</span>
+                            <span class="font-bold text-slate-800">50가구 (200명)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-slate-600">체류 기간</span>
+                            <span class="font-bold text-slate-800">14일 (2주)</span>
+                        </div>
+                        <div class="bg-emerald-50 p-4 rounded-xl space-y-2 mt-2">
+                            <p class="text-sm font-bold text-emerald-800 mb-2">💰 직접 소비 추산액</p>
+                            <div class="flex justify-between text-sm text-slate-600">
+                                <span>숙박비</span>
+                                <span>7,000만원</span>
+                            </div>
+                            <div class="flex justify-between text-sm text-slate-600">
+                                <span>식비 (42끼)</span>
+                                <span>1억 2,600만원</span>
+                            </div>
+                            <div class="flex justify-between text-sm text-slate-600">
+                                <span>체험/기타</span>
+                                <span>5,000만원</span>
+                            </div>
+                            <div class="border-t border-emerald-200 pt-2 flex justify-between font-bold text-lg text-emerald-700">
+                                <span>총 효과</span>
+                                <span>약 2억 5천만원</span>
+                            </div>
+                        </div>
+                        <p class="text-center text-xs text-emerald-600 font-bold mt-2">👉 예산 투입 대비 8배 이상의 효과!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section V: Conclusion -->
+    <section class="py-20 bg-slate-900 text-white text-center">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="text-3xl font-bold mb-6">"태백시를 위한 제언"</h2>
+            <p class="text-xl font-light leading-relaxed text-slate-300 mb-10">
+                본 프로젝트는 별도의 막대한 신규 예산을 요구하지 않습니다.<br>
+                매년 반복되는 축제 예산의 일부를 <strong class="text-white">'미래 세대 교육'</strong>과 <strong class="text-white">'실질적 지역 소비'</strong>를 위해 재투자해 주십시오.
+            </p>
+            <p class="text-lg text-emerald-400 font-medium">
+                투어메이커는 태백의 기후와 앤디(Andy)라는 글로벌 인적 자원을 결합하여,<br>
+                올여름 태백을 <span class="text-white border-b-2 border-emerald-500 pb-1">'대한민국에서 가장 붐비는 영어 교육의 성지'</span>로 만들겠습니다.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer & Contact -->
+    <section id="contact" class="py-20 bg-slate-50 border-t border-slate-200">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-slate-900 mb-4">함께 만드는 태백의 미래</h2>
+            <p class="text-slate-500 mb-12">투어메이커가 든든한 파트너가 되겠습니다.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                <!-- 대표 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition group">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 text-blue-600 group-hover:scale-110 transition">
+                        <i data-lucide="user" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-1">이재명</h3>
+                    <p class="text-slate-500 mb-4 font-medium text-sm">대표 (CEO) / 기획 총괄</p>
+                    <a href="tel:010-9443-7881" class="text-lg font-bold text-blue-600 hover:text-blue-700 block bg-blue-50 py-2 rounded-lg border border-blue-100">010-9443-7881</a>
+                </div>
+                
+                <!-- 실장 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition group">
+                    <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6 text-emerald-600 group-hover:scale-110 transition">
+                        <i data-lucide="phone" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-1">허나연</h3>
+                    <p class="text-slate-500 mb-4 font-medium text-sm">실장 (Manager) / 운영 지원</p>
+                    <a href="tel:010-5066-0433" class="text-lg font-bold text-emerald-600 hover:text-emerald-700 block bg-emerald-50 py-2 rounded-lg border border-emerald-100">010-5066-0433</a>
+                </div>
+
+                <!-- 이사 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition group">
+                    <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6 text-amber-600 group-hover:scale-110 transition">
+                        <i data-lucide="star" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-1">조혁</h3>
+                    <p class="text-slate-500 mb-4 font-medium text-sm">이사 (Director) / 대외 협력</p>
+                    <a href="tel:010-4249-4026" class="text-lg font-bold text-amber-600 hover:text-amber-700 block bg-amber-50 py-2 rounded-lg border border-amber-100">010-4249-4026</a>
+                </div>
+
+                <!-- Andrew Regan -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg z-10">Specialist</div>
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 overflow-hidden group-hover:scale-110 transition border-2 border-red-100">
+                        <img src="https://blogger.googleusercontent.com/img/a/AVvXsEi0YSsOZ847rEAjEI5w8uFj7k66WmuO18z2dZuvC5dR80SjnRbjOSrWRmqAP3CrBLPQgWQloK8Ic9n15Kjj879TNlCy8dGxyArnbDnorHB9VhqP-9dqOAb0Dnb0TOf67vZ94O-z_NQ0KUCqv7Ig-SEEWE4yESfTvJXwTgSn5wj03vT048UiCyMyl-hF-6w" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-1 truncate">Andrew Regan</h3>
+                    <p class="text-slate-500 mb-4 font-medium text-sm">총괄 디렉터 (General Director)</p>
+                    <a href="tel:010-4401-5007" class="text-lg font-bold text-red-600 hover:text-red-700 block bg-red-50 py-2 rounded-lg border border-red-100 mb-3">010-4401-5007</a>
+                    <button onclick="openModal('modal-director')" class="w-full text-sm font-bold text-slate-500 hover:text-slate-700 flex items-center justify-center gap-1">
+                        상세 프로필 보기 <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-400 py-12">
+        <div class="container mx-auto px-6 flex flex-col items-center gap-8">
+            <div class="text-center">
+                <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjPt_XUtR36-do31LZPu-HseUFx7O8EWPS3mqIfk_I03B3ltV1gnHyB8IWDw7wmx5NRUKphcI0oobuDBpPqxrFbHUiaE68DaCS7t4_c8mrCAAhqMtGt2wMem2aWCTFY2JO9vIWqqdpHYnD-gNE6Lj64aRyTuT9jHZvmylPMNU0JpZ6sGcFmuq8m5717HII" alt="Tourmaker Logo" class="h-8 opacity-70 mb-4 mx-auto object-contain">
+                <p class="text-sm">Tourmaker - Creating New Value in Travel</p>
+                <p class="text-xs mt-2 text-slate-600">Copyright © 2026 Tourmaker. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal: Director Profile -->
+    <div id="modal-director" class="fixed inset-0 z-50 hidden flex items-center justify-center modal-bg p-4 opacity-0 transition-opacity duration-300" onclick="closeModal(event, 'modal-director')">
+        <div class="bg-white rounded-2xl w-full max-w-2xl shadow-2xl transform scale-95 transition-transform duration-300 overflow-hidden" onclick="event.stopPropagation()">
+            <div class="relative h-48 bg-emerald-900">
+                 <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover opacity-50">
+                 <button onclick="closeModal(null, 'modal-director')" class="absolute top-4 right-4 text-white hover:text-emerald-200"><i data-lucide="x" class="w-8 h-8"></i></button>
+            </div>
+            <div class="px-8 pb-8 relative">
+                <div class="w-32 h-32 rounded-full border-4 border-white shadow-lg overflow-hidden -mt-16 mb-4 bg-white flex items-center justify-center">
+                    <img src="https://blogger.googleusercontent.com/img/a/AVvXsEi0YSsOZ847rEAjEI5w8uFj7k66WmuO18z2dZuvC5dR80SjnRbjOSrWRmqAP3CrBLPQgWQloK8Ic9n15Kjj879TNlCy8dGxyArnbDnorHB9VhqP-9dqOAb0Dnb0TOf67vZ94O-z_NQ0KUCqv7Ig-SEEWE4yESfTvJXwTgSn5wj03vT048UiCyMyl-hF-6w" class="w-full h-full object-cover">
+                </div>
+                
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <h3 class="text-3xl font-bold text-slate-900">Andrew Regan <span class="text-lg font-normal text-slate-500">(앤디)</span></h3>
+                        <p class="text-emerald-600 font-bold">총괄 디렉터 (General Director)</p>
+                    </div>
+                    <div class="bg-emerald-50 px-3 py-1 rounded-lg border border-emerald-100 text-emerald-700 text-sm font-bold flex items-center gap-2">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Flag_of_Canada.svg/320px-Flag_of_Canada.svg.png" alt="Canada Flag" class="w-6 h-auto rounded-sm shadow-sm">
+                        Canada (Quebec)
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-2 border-b pb-1">주요 경력</h4>
+                        <ul class="text-slate-600 space-y-1 list-disc list-inside text-sm">
+                            <li>한국 거주 20년 이상 (한국 문화/정서 완벽 이해)</li>
+                            <li>유/초/중등 영어 교육 프로그램 기획 및 운영 경력 다수</li>
+                            <li>캐나다 퀘벡 출신 문화 전문가</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-2 border-b pb-1">역할 (Role)</h4>
+                        <ul class="text-slate-600 space-y-1 list-disc list-inside text-sm">
+                            <li>전체 커리큘럼 감수 및 퀄리티 컨트롤</li>
+                            <li>원어민 강사 관리 및 트레이닝</li>
+                            <li>학부모 상담 및 안전 관리 총괄</li>
+                        </ul>
+                    </div>
+                    <div>
+                         <h4 class="font-bold text-slate-800 mb-2 border-b pb-1">Contact</h4>
+                         <p class="text-slate-600 font-bold text-lg">010-4401-5007</p>
+                    </div>
+                </div>
+                
+                <div class="mt-8 bg-emerald-50/50 p-4 rounded-xl text-center border border-emerald-100">
+                    <p class="text-emerald-800 italic font-medium">"태백의 자연은 저의 고향 퀘벡과 닮았습니다.<br>아이들에게 잊지 못할 최고의 여름을 선물하겠습니다."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        const logoWhiteUrl = "https://blogger.googleusercontent.com/img/a/AVvXsEjPt_XUtR36-do31LZPu-HseUFx7O8EWPS3mqIfk_I03B3ltV1gnHyB8IWDw7wmx5NRUKphcI0oobuDBpPqxrFbHUiaE68DaCS7t4_c8mrCAAhqMtGt2wMem2aWCTFY2JO9vIWqqdpHYnD-gNE6Lj64aRyTuT9jHZvmylPMNU0JpZ6sGcFmuq8m5717HII";
+        const logoDarkUrl = logoWhiteUrl;
+
+        function switchTab(tabId) {
+            ['prog-edu', 'prog-fes', 'prog-fam'].forEach(id => {
+                const el = document.getElementById(id);
+                el.classList.add('hidden');
+                el.classList.remove('grid');
+            });
+            
+            ['btn-edu', 'btn-fes', 'btn-fam'].forEach(btnId => {
+                const btn = document.getElementById(btnId);
+                btn.className = "px-6 py-2 rounded-full font-bold text-sm transition-all bg-white/10 text-emerald-100 hover:bg-white/20";
+            });
+
+            const selectedContent = document.getElementById(tabId);
+            selectedContent.classList.remove('hidden');
+            selectedContent.classList.add('grid');
+
+            const selectedBtnId = 'btn-' + tabId.split('-')[1];
+            const selectedBtn = document.getElementById(selectedBtnId);
+            
+            if (tabId === 'prog-edu') {
+                selectedBtn.className = "px-6 py-2 rounded-full font-bold text-sm transition-all bg-emerald-500 text-white shadow-lg transform scale-105";
+            } else if (tabId === 'prog-fes') {
+                selectedBtn.className = "px-6 py-2 rounded-full font-bold text-sm transition-all bg-blue-500 text-white shadow-lg transform scale-105";
+            } else {
+                selectedBtn.className = "px-6 py-2 rounded-full font-bold text-sm transition-all bg-amber-500 text-white shadow-lg transform scale-105";
+            }
+        }
+
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            const modalContent = modal.querySelector('div');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(event, modalId) {
+            if (event && !event.target.closest('.modal-bg')) return;
+            const modal = document.getElementById(modalId);
+            const modalContent = modal.querySelector('div');
+            modal.classList.add('opacity-0');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('navbar');
+            const navLinks = document.getElementById('nav-links');
+            const logoImg = document.getElementById('logo-img');
+
+            if (window.scrollY > 50) {
+                header.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-sm');
+                header.classList.remove('bg-transparent');
+                navLinks.classList.remove('text-white/90');
+                navLinks.classList.add('text-slate-600');
+            } else {
+                header.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-sm');
+                header.classList.add('bg-transparent');
+                navLinks.classList.add('text-white/90');
+                navLinks.classList.remove('text-slate-600');
+            }
+        });
+    </script>
+</body>
+</html>

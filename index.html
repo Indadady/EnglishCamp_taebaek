@@ -37,29 +37,158 @@
         .phase-card { border-left: 4px solid var(--tm); }
         .en-summary { font-family: 'Noto Sans KR', system-ui, sans-serif; }
         @media print {
-            @page { size: A4 portrait; margin: 14mm 12mm; }
-            body { background: #fff !important; font-size: 11pt; }
-            .print-hidden { display: none !important; }
+            @page { size: A4 portrait; margin: 12mm 14mm; }
+            html, body { background: #fff !important; margin: 0; padding: 0; }
+            body > *:not(#print-summary) { display: none !important; }
             #print-summary { display: block !important; }
-            #english-summary { display: none !important; }
-            section { page-break-inside: avoid; }
-            .hero-bg { min-height: auto !important; padding: 24px !important; }
         }
-        #print-summary { display: none; }
+        #print-summary { display: none; color: #1e293b; font-size: 9.5pt; line-height: 1.45; }
+        #print-summary .print-page { page-break-after: always; }
+        #print-summary .print-page:last-child { page-break-after: auto; }
+        #print-summary h1 { font-size: 15pt; font-weight: 900; color: #004098; margin: 0 0 6px; text-align: center; }
+        #print-summary h2 { font-size: 10.5pt; font-weight: 700; color: #004098; margin: 10px 0 5px; border-bottom: 1.5px solid #004098; padding-bottom: 2px; }
+        #print-summary h3 { font-size: 9.5pt; font-weight: 700; margin: 6px 0 3px; }
+        #print-summary p { margin: 0 0 4px; }
+        #print-summary ul { margin: 0 0 4px; padding-left: 14px; }
+        #print-summary li { margin-bottom: 1px; }
+        #print-summary table { width: 100%; border-collapse: collapse; margin: 4px 0 6px; font-size: 8.5pt; }
+        #print-summary th, #print-summary td { border: 1px solid #cbd5e1; padding: 3px 5px; text-align: left; vertical-align: top; }
+        #print-summary th { background: #004098; color: #fff; font-weight: 600; }
+        #print-summary .print-meta { font-size: 8pt; color: #64748b; margin-bottom: 8px; }
+        #print-summary .print-tagline { text-align: center; font-size: 10pt; font-weight: 700; color: #1a3d32; margin: 6px 0 8px; }
+        #print-summary .print-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin: 4px 0; }
+        #print-summary .print-box { border: 1px solid #e2e8f0; border-radius: 4px; padding: 5px 7px; background: #f8fafc; }
+        #print-summary .print-box strong { color: #004098; }
+        #print-summary .print-footer { font-size: 7.5pt; color: #94a3b8; text-align: center; margin-top: 8px; border-top: 1px solid #e2e8f0; padding-top: 4px; }
+        #print-summary .print-contacts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; font-size: 8pt; }
+        #print-summary .print-contact { border: 1px solid #e2e8f0; border-radius: 4px; padding: 4px; text-align: center; }
+        #print-summary .print-highlight { background: #eff6ff; border-left: 3px solid #004098; padding: 5px 8px; margin: 4px 0; font-size: 9pt; }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- 인쇄용 요약 (공문 첨부) -->
-    <div id="print-summary" class="mb-8 text-sm leading-relaxed">
-        <p class="text-right text-slate-500 mb-6">태백시 추진 제안 | ㈜투어메이커 | 2027년 태백 글로벌 썸머 스쿨</p>
-        <h1 class="text-xl font-bold text-center mb-4 border-b-2 border-[#004098] pb-3">태백 글로벌 썸머 스쿨 추진 제안서 (요약)</h1>
-        <p class="mb-4"><strong>제안 주체:</strong> ㈜투어메이커 (용역 수행·현장 운영) · QB Global (영어캠프 운영 노하우 협업) · Andrew Regan 총괄 디렉터</p>
-        <p class="mb-4"><strong>1년차 재원:</strong> 태백시 축제 예산·교육청 교육예산 → 투어메이커 용역 계약</p>
-        <p class="mb-4"><strong>추진 시기:</strong> 2027년 7~8월 (2026년 사업 설계·협약·모객)</p>
-        <p class="mb-4"><strong>예산 방향:</strong> 기존 여름 축제 예산 일부 전환 + 강원도·교육청 지역학생 지원 연계 (신규 대규모 예산 최소화)</p>
-        <p class="mb-4"><strong>1년차 목표:</strong> 태백·인근 폐광·지역소멸권 학생 우선 모집(약 20~30명) → 성과·데이터 축적 → 2028년 전국 모집 확대</p>
-        <p><strong>기대 효과:</strong> 체류형 생활인구 유치, 지역 숙박·식음료 소비 증대, 축제와 연계한 글로벌 콘텐츠, 시정 업적 및 재현 가능한 교육관광 모델</p>
+    <!-- 인쇄용 요약 (공문 첨부 · A4 3페이지) -->
+    <div id="print-summary">
+
+        <!-- 1페이지: 개요 · 기대효과 -->
+        <div class="print-page">
+            <div class="print-meta">
+                <span>수신: 태백시 · 강원특별자치도</span>
+                <span style="float:right">발신: ㈜투어메이커 · 2027 태백 글로벌 썸머 스쿨</span>
+            </div>
+            <h1>태백 글로벌 썸머 스쿨 추진 제안서 (요약)</h1>
+            <p class="print-tagline">No Quebec in Canada, Yes Taebaek in Korea — 체류형 교육관광으로 태백의 여름을 알리고 생활인구를 늘립니다.</p>
+
+            <table>
+                <tr><th style="width:18%">항목</th><th>내용</th></tr>
+                <tr><td><strong>제안 주체</strong></td><td>㈜투어메이커 (용역 수행·현장 운영) · QB Global (영어캠프 SOP·원어민) · Andrew Regan (총괄 디렉터)</td></tr>
+                <tr><td><strong>1년차 재원</strong></td><td>태백시 축제 예산·교육청 교육예산 → 투어메이커 용역 계약 (신규 대규모 예산 최소화)</td></tr>
+                <tr><td><strong>추진 시기</strong></td><td>2027년 7~8월 운영 · 2026년 사업 설계·협약·모객</td></tr>
+                <tr><td><strong>1년차 규모</strong></td><td>태백·인근 폐광·지역소멸권 학생 우선 모집, 약 20~30명 (2주 과정)</td></tr>
+                <tr><td><strong>확대 로드맵</strong></td><td>2027 파일럿 → 2028 전국 모집(40~60명) → 2029+ 강원 다캠퍼스(태백·화천·연계권)</td></tr>
+            </table>
+
+            <h2>제안 개요</h2>
+            <p>태백시 여름 축제 예산의 일부와 지역·교육청 교육예산을 활용하여, 2027년 여름 「태백 글로벌 썸머 스쿨」을 추진합니다. 해외 캠프 수준의 원어민 커리큘럼을 태백의 고원 기후(해발 900m)와 실제 한강·낙동강 발원지 축제 프로그램과 연계하여, <strong>지역 홍보·체류형 생활인구·지역경제·지역 학생 교육 기회</strong>를 동시에 달성합니다.</p>
+            <div class="print-highlight">고환율 시대, 해외 캠프(비행 13시간) 대비 자동차 3시간·비용 약 50% 수준으로 글로벌 영어 교육을 제공합니다.</div>
+
+            <h2>태백시가 얻는 것</h2>
+            <div class="print-grid-2">
+                <div class="print-box"><strong>지역 브랜드·홍보</strong><br>「대한민국에서 가장 시원한 영어 캠프」— 전국 학부모에게 태백 각인, 축제·관광 홍보 연계</div>
+                <div class="print-box"><strong>체류형 생활인구</strong><br>1~2주 체류로 숙박·식음료·체험 소비가 지역 상권에 직접 연결 (당일 관람 대비 다중 효과)</div>
+                <div class="print-box"><strong>지역 학생 교육 혜택</strong><br>태백·인근 지역 학생 우선 참가 — 고비용 해외 캠프 대비 접근 가능한 글로벌 영어 교육</div>
+                <div class="print-box"><strong>재현 가능한 시정 성과</strong><br>매년 반복 운영 가능한 교육관광 앵커 상품 — 축제 예산의 휘발성 지출을 지속형 성과로 전환</div>
+            </div>
+
+            <h2>단계별 추진 계획</h2>
+            <table>
+                <tr><th style="width:14%">단계</th><th style="width:12%">시기</th><th>핵심 내용</th></tr>
+                <tr><td>Phase 1</td><td>2026</td><td>시·교육청·축제위 협의·업무협약, 운영 매뉴얼·안전·보험 체계, 숙소·카페·365세이프타운 제휴, 사전 모객</td></tr>
+                <tr><td>Phase 2</td><td>2027</td><td><strong>파일럿</strong> — 지역학생 20~30명, 시 축제+교육청 예산 → 투어메이커 용역, QB Global 원어민, 만족도·소비액·축제 연계 성과 축적</td></tr>
+                <tr><td>Phase 3</td><td>2028</td><td>전국 모집 확대(40~60명), 지자체 참가 지원금+학부모 확정금, 2주 과정 정식화, Workation 본격 운영</td></tr>
+                <tr><td>Phase 4</td><td>2029+</td><td>강원 다캠퍼스(태백·화천·영월·정선 연계) — 태백 파일럿 성공 전제, 단계적 추진</td></tr>
+            </table>
+            <p class="print-footer">1/3 · 상세 내용: indadady.github.io/EnglishCamp_taebaek</p>
+        </div>
+
+        <!-- 2페이지: 프로그램 · 인프라 · 축제 -->
+        <div class="print-page">
+            <h2>프로그램 구성 — 「카페 오전 수업 + 오후 축제·액티비티」</h2>
+            <table>
+                <tr><th style="width:14%">구분</th><th style="width:22%">시간대</th><th>내용</th></tr>
+                <tr><td>Academic</td><td>오전</td><td>관내 대형 카페 글로벌 클래스 — <strong>숲향긋</strong>(숲 뷰), <strong>초록불</strong>(20~30명), <strong>태백875</strong>(세연중앞) 각 20~30명 수용</td></tr>
+                <tr><td>Activity</td><td>오후</td><td>365세이프타운, 석탄박물관, 검룡소 트레킹 + 발원지 축제 연계 영어 미션·봉사</td></tr>
+                <tr><td>Festival</td><td>주말</td><td>황지연못·태백문화광장 — Global Festival Leader(주니어 안내·통역), 영어 뮤지컬·성과 발표</td></tr>
+                <tr><td>Workation</td><td>가족</td><td>학부모 업무·휴식(숲향긋·바람의 언덕) · 프리미엄: 고한·사북 하이원 리조트</td></tr>
+            </table>
+
+            <h2>2주 커리큘럼 요약 (축제 일정 연동 · 예시)</h2>
+            <table>
+                <tr><th style="width:12%">주차</th><th style="width:38%">오전 (Academic)</th><th>오후·저녁 (Activity)</th></tr>
+                <tr><td><strong>1주</strong><br>적응·탐색</td><td>입학식·오리엔테이션 → 지리·문화 → Science(지질·화석) → Art & Culture → 1주차 프로젝트 발표</td><td>베이스캠프·팀빌딩 → 석탄박물관·쿨시네마 → 흠뻑놀장 → 워터워킹 퍼레이드·BBQ·수맥 페스티벌</td></tr>
+                <tr><td><strong>2주</strong><br>심화·축제</td><td>Global Manners → Biology·고산식물 → Music·Drama(공연 준비) → 토론·에티켓 → 수료식(Andy 수료증)</td><td>365세이프타운 Safety Hero → 검룡소 보물찾기 → 어린이 싱어롱쇼 → 황지연못 미션 → 폐막식·산골음악회·귀가</td></tr>
+            </table>
+            <p style="font-size:7.5pt;color:#64748b">※ 제10~11회 한강·낙동강 발원지축제(7월 말~8월 초)·쿨시네마 일정 기준, 매년 확정 일정에 맞춰 조정</p>
+
+            <h2>현장 인프라 · 축제 연계</h2>
+            <div class="print-grid-2">
+                <div class="print-box">
+                    <strong>이동</strong> 태백스카이 관광 차량 단체 이동<br>
+                    <strong>숙박</strong> 365세이프타운·민박촌(기본) / 캠핑 1박(선택) / 하이원(프리미엄)<br>
+                    <strong>식사</strong> 지역 맛집 로테이션 · 수맥 페스티벌 연계<br>
+                    <strong>안전</strong> 365세이프타운 Safety Hero · 교육청 캠프 수준 보험 · QB Global SOP
+                </div>
+                <div class="print-box">
+                    <strong>축제 ↔ 캠프 연계 (연례)</strong>
+                    <ul style="margin-top:2px">
+                        <li>워터워킹 퍼레이드 → 영어 인터뷰·리포트</li>
+                        <li>어린이 싱어롱쇼 → 뮤지컬 준비 벤치마킹</li>
+                        <li>수맥 페스티벌·야시장 → 저녁 커뮤니티·지역 소비</li>
+                        <li>쿨시네마 → Movie Night·영어 토론</li>
+                        <li>폐막 산골음악회 → 수료 주간 피날레·봉사</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="print-footer">2/3 · 상세 내용: indadady.github.io/EnglishCamp_taebaek</p>
+        </div>
+
+        <!-- 3페이지: 예산 · 추진체계 · 연락처 -->
+        <div class="print-page">
+            <h2>예산 전략</h2>
+            <p>신규 대규모 예산 없이, <strong>기존 축제·교육 예산의 효율적 전환</strong>을 제안합니다. 1년차는 시·교육청 예산으로 캠프 프로그램을 설계하고, 운영 용역은 ㈜투어메이커가 수행합니다.</p>
+            <table>
+                <tr><th style="width:50%">AS-IS · 기존 축제 예산</th><th>TO-BE · 교육관광 전환 (제안)</th></tr>
+                <tr><td>일회성 공연·무대 중심 · 당일·반일 체류 · 숙박·식사 연계 약함</td><td>1~2주 체류형 프로그램 · 축제 성과 발표·봉사 연계 · 지역 소상공인 직접 소비</td></tr>
+            </table>
+            <div class="print-highlight"><strong>경제 효과 (동일 3,000만원 기준):</strong> A. 유명 가수 섭외 — 체류 약 3시간, 휘발성 · B. 썸머 스쿨 — 20~30명×7~14일, 숙박·식사·체험 지역 순환 소비 → <strong>예산 대비 다중 효과</strong></div>
+            <p>2년차 이후: 지자체 참가 지원금 + 학부모 확정금(노쇼 방지) 병행 → 예산 예측 가능성·프로그램 신뢰도 제고</p>
+
+            <h2>추진 체계 · 1년차 운영 인력 (20~30명 기준)</h2>
+            <table>
+                <tr><th>기관</th><th>역할</th></tr>
+                <tr><td><strong>㈜투어메이커</strong></td><td>용역 수행·사업 총괄 — 지자체 협의, 현장 운영, 태백스카이 차량, 숙박·식사·축제 연계</td></tr>
+                <tr><td><strong>QB Global</strong></td><td>영어캠프 SOP·원어민 강사 수급·안전·보험 (인천교육청 캠프 운영 실적)</td></tr>
+                <tr><td><strong>Andrew Regan (앤디)</strong></td><td>총괄 디렉터 — 커리큘럼·수업 품질, 축제 공연, 학부모 소통, 수료식 (캐나다 퀘벡·태백 거주)</td></tr>
+            </table>
+            <p>운영 인력(안): 총괄 디렉터 1 · 원어민 1~2 · 한국어 코디 1~2 · 현장·액티비티 1 · 안전·운영 1 · 기획·대외 1</p>
+
+            <h2>스마트 가이드북 (Tourmaker)</h2>
+            <p>참가 학생·학부모·강사·운영진에게 모바일 웹 가이드북 제공 — 일자별 일정, 카페·축제장 지도, 비상 연락망, 날씨, A4 일정표 인쇄. 2027 파일럿 시 캠프 전용 제작·배포.</p>
+
+            <h2>태백시를 위한 제언</h2>
+            <p>매년 반복되는 축제 예산의 일부를 <strong>미래 세대 교육</strong>과 <strong>실질적 지역 소비</strong>에 재투자해 주십시오. 2027년 여름, 태백을 <strong>대한민국 고원 교육관광의 출발점</strong>으로 함께 만들겠습니다.</p>
+            <p style="text-align:center;font-size:8.5pt;color:#004098;font-weight:700;margin:6px 0">2026 협약·설계 → 2027 파일럿 → 2028 전국 확대 → 강원 권역 연계</p>
+
+            <h2>추진팀 연락처</h2>
+            <div class="print-contacts">
+                <div class="print-contact"><strong>이재명</strong><br><span style="color:#64748b">대표·기획</span><br>010-9443-7881</div>
+                <div class="print-contact"><strong>허나연</strong><br><span style="color:#64748b">실장·운영</span><br>010-5066-0433</div>
+                <div class="print-contact"><strong>조혁</strong><br><span style="color:#64748b">이사·대외</span><br>010-4249-4026</div>
+                <div class="print-contact" style="border-color:#e85d26"><strong>Andrew Regan</strong><br><span style="color:#64748b">총괄 디렉터</span><br>010-4401-5007</div>
+            </div>
+            <p class="print-footer">3/3 · © 2026 ㈜투어메이커 · tourmaker.kr · indadady.github.io/EnglishCamp_taebaek</p>
+        </div>
+
     </div>
 
     <header class="print-hidden bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b-2 border-[#004098]">
@@ -77,7 +206,7 @@
                 <a href="#smart-guide" class="px-2 py-1 text-slate-600 hover:text-[#004098]">스마트가이드</a>
                 <a href="#budget" class="px-2 py-1 text-slate-600 hover:text-[#004098]">예산</a>
                 <a href="#organization" class="px-2 py-1 text-slate-600 hover:text-[#004098]">추진체계</a>
-                <button onclick="window.print()" class="ml-1 bg-[#004098] text-white px-3 py-1.5 rounded-lg font-bold text-sm"><i class="fa-solid fa-print mr-1"></i>인쇄</button>
+                <button onclick="window.print()" class="ml-1 bg-[#004098] text-white px-3 py-1.5 rounded-lg font-bold text-sm" title="A4 요약본 3페이지"><i class="fa-solid fa-print mr-1"></i>요약본 인쇄</button>
             </div>
         </nav>
     </header>
